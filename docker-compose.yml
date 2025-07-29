@@ -1,0 +1,40 @@
+services:
+
+  mysql:
+    image: mysql:8.0.43
+    container_name: sensicore-mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: sensicore
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  backend:
+    build:
+      context: ./backend
+    container_name: sensicore-backend
+    depends_on:
+      - mysql
+    entrypoint: ["/start.sh", "mysql", "3306", "./server"]
+    ports:
+      - "8686:8686"
+    environment:
+      PORT: "8686"
+      MYSQL_DB_CONN_STR: "root:password@tcp(mysql:3306)/sensicore?parseTime=true"
+
+  sensor:
+    build:
+      context: ./sensor
+    container_name: sensicore-sensor
+    depends_on:
+      - backend
+    entrypoint: ["/start.sh", "backend", "8686", "./sensor"]
+    environment:
+      BACKEND_BASE_URL: "http://backend:8686"
+      FLUSH_DATA_PATH_BUFFERED: "/public/data"
+      FLUSH_DATA_PATH_STREAMED: "/public/data/stream"
+      SENSORS_COUNT: "4"
+      STREAM_DATA: "true"
