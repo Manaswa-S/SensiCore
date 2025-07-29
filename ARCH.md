@@ -78,3 +78,35 @@ where dependencies like DB connections, service layer, etc are injected at runti
 |`idx_sensors_data_id1`     | `id1`     |
 |`idx_sensors_data_id2`     | `id2`     |
 |`idx_sensors_data_read_at` | `read_at` |
+
+
+
+### Sensor Data Generator
+
+##### Generator
+
+-   A new go routine is spawned corresponding to each sensor.
+-   Each of these sensor generates random data values (with-in a certain realistic range from initial read).
+-   The `id1` and `id2` are somewhat deterministic as they oscillate between a pre-defined range.
+-   The read_at time is the time it was generated.
+-   The generation is periodic, the interval being randomly decided between a range, and used forever without changing.
+
+
+
+##### Flusher
+
+-   Two data channels are initialized on startup. One being the main channel, the other one being the alternate/substitute.
+
+##### Stream Events Mode
+
+-   A connection is opened and an `io.Pipe` is used to continuosly push incoming events from main channel to the connection.
+-   This connection is held open for a certain time, and then closed, and swapped for a new connection.
+
+##### Batch Events Mode
+-   In this mode, a channel-based dual-buffer design is used.
+    -  A producer fills buffer A while buffer B is flushed to backend.
+    -  Once buffer A is full, buffers are swapped, allowing ingestion to continue without blocking flush.
+    -  This improves throughput without needing locks.
+
+-   A time.Ticker periodically, over a short interval, checks for main data channel crossing its `BUFFER_LIMIT`.
+-   Once the limit is crossed, the channels are swapped, the main channel, after swapping becomes alternate channel, which is then flushed in  a batch to the backend. 
