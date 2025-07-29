@@ -11,7 +11,7 @@ The backend is capable of ingesting real-time data, storing it efficiently, and 
 - Pagination support for large datasets via `limit` and `offset` query parameters
 - All services containerized via Docker Compose
 
-> #### To know more about architecture and design choices, please see <a href="">ARCH.md</a>
+> #### To know more about architecture and design choices, please see <a href="https://github.com/Manaswa-S/SensiCore/blob/main/ARCH.md">ARCH.md</a>
 
 ---
 
@@ -94,8 +94,8 @@ The data is sorted by timestamp in descending order, returning the `{limit}` mos
 
 | Query                                                      | Result                |
 |------------------------------------------------------------|-----------------------|
-|`localhost:8686/public/data?id1=1&id2=A`                    | <a href="">result</a> |
-|`localhost:8686/public/data?start=1753800631&end=1753800731`| <a href="">result</a> |
+|`localhost:8686/public/data?id1=1&id2=A`                    | <a href="https://github.com/Manaswa-S/SensiCore/blob/main/zresults/1.A.0.0.json">result</a> |
+|`localhost:8686/public/data?start=1753800631&end=1753800731`| <a href="https://github.com/Manaswa-S/SensiCore/blob/main/zresults/0.0.1753800631.1753800731.json">result</a> |
 
 Paste the query in any browser or replace {query} in following with it.
 ```bash
