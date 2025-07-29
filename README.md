@@ -26,9 +26,12 @@ The backend is capable of ingesting real-time data, storing it efficiently, and 
 ##### Clone and Run
 ```bash
 git clone https://github.com/Manaswa-S/SensiCore.git
-cd sensicore
+cd SensiCore/
 docker compose up --build
 ```
+
+The first time you run this, Docker may take a few minutes to download required images (MySQL, Alpine, etc.).
+
 To see proper running logs of the program, open a new terminal window and do
 ```bash
 docker attach sensicore-backend
@@ -49,11 +52,11 @@ Note: Ensure relevant environment variables are set correctly for local runs.
 ##### Clone and Run
 ```bash
 git clone https://github.com/Manaswa-S/SensiCore.git
-cd sensicore/backend/
+cd SensiCore/backend/
 go mod download
 go run cmd/main.go
 ```
-Now In a different terminal window, navigate to the `sensicore` folder again, and do
+Now In a different terminal window, navigate to the `SensiCore` folder again, and do
 ```bash
 cd sensor
 go mod download
