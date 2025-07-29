@@ -102,6 +102,9 @@ Paste the query in any browser or replace {query} in following with it.
 curl -X GET "{query}"
 ```
 
+##### Remember
+- All timestamps are in UTC.
+
 ---
 
 ### Configurations
