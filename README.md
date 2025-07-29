@@ -161,5 +161,11 @@ These configurations can be set via enviornment variables or command line argume
 
 ---
 
+#### Need Help ?
+If you face any issues running this project, feel free to reach out at mnswamain@gmail.com .
+I'd be happy to help or clarify anything!
+
+---
+
 ### License
 This project is open-sourced only for assignment review. All rights reserved © 2025.
