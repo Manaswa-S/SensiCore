@@ -15,6 +15,21 @@ The backend is capable of ingesting real-time data, storing it efficiently, and 
 
 ---
 
+#### Note: OS Compatibility
+
+This project has been thoroughly tested on Linux (Ubuntu 22.04.5 LTS) with Docker and Bash.
+While it should work on Windows (via Docker Desktop or WSL2), please note:
+
+- Bash scripts like start.sh won't run natively on Windows without WSL or Git Bash.
+- Docker Desktop on Windows can have image pull issues, networking delays, volume mount issues, etc.
+- Linux native commands may not be available in other OS, and therefore file paths among other things may break.
+
+
+#### Recommended Environment:
+If you're on Windows, run this setup through WSL2 (Ubuntu) or a Linux VM for a smooth reliable experience.
+
+---
+
 ### Getting Started
 
 #### Option 1: Via Docker (Recommended)
@@ -23,7 +38,7 @@ The backend is capable of ingesting real-time data, storing it efficiently, and 
 - Docker & Docker Compose installed (refer <a href="https://docs.docker.com/engine/install/">this</a>)
 - Bash
 
-##### Clone and Run
+##### Clone and Compose
 ```bash
 git clone https://github.com/Manaswa-S/SensiCore.git
 cd SensiCore/
