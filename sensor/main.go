@@ -4,14 +4,18 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"os/signal"
 	"sensor/internal"
 	"strconv"
-	"time"
+	"syscall"
 
 	"github.com/joho/godotenv"
 )
 
 func main() {
+
+	flowChan := make(chan os.Signal, 1)
+	signal.Notify(flowChan, syscall.SIGINT, syscall.SIGTERM)
 
 	err := godotenv.Load()
 	if err != nil {
@@ -80,7 +84,7 @@ func main() {
 
 	generator.Start()
 
-	time.Sleep(150 * time.Second)
+	<-flowChan
 
 	generator.Stop(nil)
 }

@@ -38,7 +38,7 @@ func main() {
 
 	<-flowChan
 
-	fmt.Println("shutting down")
+	fmt.Println("Shutting server down...")
 
 	if err := db.Close(dataStore); err != nil {
 		fmt.Println(err)

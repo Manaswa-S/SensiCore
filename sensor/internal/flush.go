@@ -173,5 +173,3 @@ func (g *Generator) flushBuffer() (totalFlushCnt, successfulFlushCnt int64) {
 
 	return
 }
-
-// fmt.Printf("%10d : %-10s : %-10d : %35s\n", data.ID1, data.ID2, data.Value, data.Time.String())

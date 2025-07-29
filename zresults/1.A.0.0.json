@@ -1,0 +1,152 @@
+[
+    {
+      "Value": 36.89566,
+      "Unit": {
+        "String": "Degrees Celsius",
+        "Valid": true
+      },
+      "Id1": 1,
+      "Id2": "A",
+      "ReadAt": "2025-07-29T14:51:10Z"
+    },
+    {
+      "Value": 42.61634,
+      "Unit": {
+        "String": "Degrees Celsius",
+        "Valid": true
+      },
+      "Id1": 1,
+      "Id2": "A",
+      "ReadAt": "2025-07-29T14:51:02Z"
+    },
+    {
+      "Value": 38.382347,
+      "Unit": {
+        "String": "Degrees Celsius",
+        "Valid": true
+      },
+      "Id1": 1,
+      "Id2": "A",
+      "ReadAt": "2025-07-29T14:50:54Z"
+    },
+    {
+      "Value": 34.995136,
+      "Unit": {
+        "String": "Degrees Celsius",
+        "Valid": true
+      },
+      "Id1": 1,
+      "Id2": "A",
+      "ReadAt": "2025-07-29T14:50:47Z"
+    },
+    {
+      "Value": 40.7198,
+      "Unit": {
+        "String": "Degrees Celsius",
+        "Valid": true
+      },
+      "Id1": 1,
+      "Id2": "A",
+      "ReadAt": "2025-07-29T14:50:39Z"
+    },
+    {
+      "Value": 36.505917,
+      "Unit": {
+        "String": "Degrees Celsius",
+        "Valid": true
+      },
+      "Id1": 1,
+      "Id2": "A",
+      "ReadAt": "2025-07-29T14:50:31Z"
+    },
+    {
+      "Value": 42.771553,
+      "Unit": {
+        "String": "Degrees Celsius",
+        "Valid": true
+      },
+      "Id1": 1,
+      "Id2": "A",
+      "ReadAt": "2025-07-29T14:50:24Z"
+    },
+    {
+      "Value": 34.060005,
+      "Unit": {
+        "String": "Degrees Celsius",
+        "Valid": true
+      },
+      "Id1": 1,
+      "Id2": "A",
+      "ReadAt": "2025-07-29T14:50:16Z"
+    },
+    {
+      "Value": 37.764217,
+      "Unit": {
+        "String": "Degrees Celsius",
+        "Valid": true
+      },
+      "Id1": 1,
+      "Id2": "A",
+      "ReadAt": "2025-07-29T14:50:08Z"
+    },
+    {
+      "Value": 42.94492,
+      "Unit": {
+        "String": "Degrees Celsius",
+        "Valid": true
+      },
+      "Id1": 1,
+      "Id2": "A",
+      "ReadAt": "2025-07-29T14:50:01Z"
+    },
+    {
+      "Value": 41.383812,
+      "Unit": {
+        "String": "Degrees Celsius",
+        "Valid": true
+      },
+      "Id1": 1,
+      "Id2": "A",
+      "ReadAt": "2025-07-29T14:49:53Z"
+    },
+    {
+      "Value": 37.796158,
+      "Unit": {
+        "String": "Degrees Celsius",
+        "Valid": true
+      },
+      "Id1": 1,
+      "Id2": "A",
+      "ReadAt": "2025-07-29T14:49:46Z"
+    },
+    {
+      "Value": 42.54164,
+      "Unit": {
+        "String": "Degrees Celsius",
+        "Valid": true
+      },
+      "Id1": 1,
+      "Id2": "A",
+      "ReadAt": "2025-07-29T14:49:38Z"
+    },
+    {
+      "Value": 41.810467,
+      "Unit": {
+        "String": "Degrees Celsius",
+        "Valid": true
+      },
+      "Id1": 1,
+      "Id2": "A",
+      "ReadAt": "2025-07-29T14:49:30Z"
+    },
+    {
+      "Value": 35.63019,
+      "Unit": {
+        "String": "Degrees Celsius",
+        "Valid": true
+      },
+      "Id1": 1,
+      "Id2": "A",
+      "ReadAt": "2025-07-29T14:49:23Z"
+    }
+  ]

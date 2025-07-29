@@ -38,3 +38,5 @@ services:
       FLUSH_DATA_PATH_STREAMED: "/public/data/stream"
       SENSORS_COUNT: "4"
       STREAM_DATA: "true"
+      DATA_CHAN_SIZE: 100
+      BUFFER_LIMIT: 70

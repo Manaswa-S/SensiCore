@@ -32,6 +32,7 @@ func (h *Handler) RegisterRoutes(routeGrp *echo.Group) {
 	routeGrp.GET("/data", h.GetData)
 }
 
+// [] , no filtering
 // [ID1] , all rows with ID1
 // [ID2] , all rows with ID2
 // [start] , all rows with read_at >= start

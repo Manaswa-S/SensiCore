@@ -96,7 +96,7 @@ func (s *Service) GetData(eCtx echo.Context, id1Str, id2Str, startStr, endStr, l
 	var start int64
 	var end int64
 
-	limit := int64(15)
+	limit := int64(25)
 	offset := int64(0)
 
 	var err error

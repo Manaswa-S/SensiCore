@@ -38,7 +38,7 @@ func getRandomInRange(min, max int64) int64 {
 }
 
 func getRandomSensorValInRange(min, max float64) float64 {
-	return rand.Float64()*(max-min+1) + min
+	return rand.Float64()*(max-min) + min
 }
 
 var sensorUnits = []string{"Degrees Celsius", "Percentage", "Meters/second squared",

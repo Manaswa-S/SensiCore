@@ -6,6 +6,7 @@ import (
 	"sensicore/cmd/db"
 	"sensicore/internal/handlers"
 	"sensicore/internal/services"
+	"time"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -14,6 +15,8 @@ import (
 func InitHTTPServer(ds *db.DataStore) error {
 
 	e := echo.New()
+
+	e.Server.ReadTimeout = time.Duration(30) * time.Second
 
 	e.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
 		Format:           "[GIN] ${time_custom} | ${status} | ${latency_human} | ${remote_ip} | ${method} ${uri}\n",

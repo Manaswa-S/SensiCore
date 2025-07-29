@@ -24,7 +24,7 @@ WHERE
     (sensors_data.id2 = ? OR ? = "") AND
     (sensors_data.read_at >= ? OR ? = ?) AND
     (sensors_data.read_at <= ? OR ? = ?)
-ORDER BY sensors_data.read_at ASC
+ORDER BY read_at DESC
 LIMIT ?
 OFFSET ?
 `
