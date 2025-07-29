@@ -34,6 +34,8 @@ func (s *Service) PostData(eCtx echo.Context, buffer *[]dto.SensorDataReq) (*dto
 	}
 	txQueries := s.Queries.WithTx(sqlTx)
 
+	// TODO: maybe we need a defer rollback here ??
+
 	successfulCnt := int64(len(*buffer))
 
 	for _, d := range *buffer {
@@ -49,7 +51,9 @@ func (s *Service) PostData(eCtx echo.Context, buffer *[]dto.SensorDataReq) (*dto
 			successfulCnt--
 		}
 	}
-	sqlTx.Commit()
+	if err := sqlTx.Commit(); err != nil {
+		return nil, err
+	}
 
 	return &dto.SensorDataResp{
 		SuccessfulCnt: successfulCnt,
@@ -58,6 +62,7 @@ func (s *Service) PostData(eCtx echo.Context, buffer *[]dto.SensorDataReq) (*dto
 
 func (s *Service) PostDataStream(eCtx echo.Context) (*dto.SensorDataResp, error) {
 	ctx := eCtx.Request().Context()
+	// defer eCtx.Request().Body.Close()
 
 	decoder := json.NewDecoder(eCtx.Request().Body)
 	successfulCnt := int64(0)
@@ -129,12 +134,18 @@ func (s *Service) GetData(eCtx echo.Context, id1Str, id2Str, startStr, endStr, l
 		if err != nil {
 			return nil, err
 		}
+		if limit <= 0 {
+			limit = 25
+		}
 	}
 
 	if offsetStr != "" {
 		offset, err = strconv.ParseInt(offsetStr, 10, 64)
 		if err != nil {
 			return nil, err
+		}
+		if offset < 0 {
+			offset = 0
 		}
 	}
 

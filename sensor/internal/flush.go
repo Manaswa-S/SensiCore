@@ -79,6 +79,7 @@ func (g *Generator) acquireStreamConn() *json.Encoder {
 			}
 			g.GeneralMsg("Acquired stream connection.")
 			defer resp.Body.Close()
+			// TODO: we are dropping the SuccessfulCnt from resp.Body here.
 		}()
 
 		time.Sleep(15 * time.Second) // The connection is refreshed every 15 seconds.
